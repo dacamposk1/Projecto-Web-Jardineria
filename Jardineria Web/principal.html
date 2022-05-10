@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/css.css">
+  <title>Jardineria</title>
+</head>
+
+
+<header>
+
+
+
+ 
+    <div class="col-xs col-sm-12 col-md col-lg-12" >
+      <marquee  direction="left">    <div class="container" >
+        <table class="table table-bordered table-striped"  style="background-color: #054d3b;" style="color: #fff;" mt-0 p-0  m-0 mb-0>
+        
+          <tbody id="data" style="color: #fff;">
+          </tbody>
+        </table>
+      </div></marquee>
+      
+    </div>
+ 
+    
+  <div class="container-fluid" >
+    <div class="row">
+      <div class="col-xs col-sm-12 col-md col-lg-4">
+        <div class="logo"><img src="imagenes/header.png" class="img-fluid"></div>
+      </div>
+
+      <div class="col-xs col-sm-12 col-md col-lg-6">
+        <div class="busqueda">
+        <nav class="navbar navbar-light" style="background-color: #fdfff9;">
+          <div class="container-fluid">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+      <div class="col-xs col-sm-12 col-md col-lg-2" >
+        <!-- Button trigger modal -->
+        <button mb-20 type="button" class="btn btn-outline-success " data-bs-toggle="modal" data-bs-target="#staticBackdrop " style="float:right; " >
+          Iniciar Sesión
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Iniciar Sesion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Recordar Contraseña</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                    <a src href="registro.html">¿No tienes Cuenta?</a>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #054d3b;" style="color: #ffffff;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="principal.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quienessomos.html">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Revisa Nuestros Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #054d3b;">
+            <li><a class="dropdown-item" href="herramientas.html">Herramientas de Jardineria</a></li>
+            <li><a class="dropdown-item" href="plantas.html">Plantas</a></li>
+            <li><a class="dropdown-item" href="#">Riego</a></li>
+            <li><a class="dropdown-item" href="#">Tierra</a></li>
+          </ul>
+        </li>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:ventajardin@gmail.com">Contacto</a>
+        </li>
+
+    </div>
+  </div>
+</nav>
+
+<div class="Slide">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imagenes/slider1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/slider2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/slider3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</div>
+
+
+<div class="principal">
+
+
+  <body>
+
+    <div class="mensaje">
+      <h2 style="color:#8fbd4f" class="bievenida">Tienda Venta Jardineria</h2>
+      <p>Bievenidos a Venta Jardineria en nuestra tienda encontrarás todo lo que deseas para tu jardín.</p>
+
+
+    </div>
+
+
+    <div class="container-fluid">
+      <h5 class="destacados">Nuestros Productos Destacados</h5>
+
+      <div class="row">
+        <div class="col-xs col-sm-6 col-md col-lg-4">
+          <div>
+
+            <img src="imagenes/destacado1.jpg" class="img-fluid">
+            <h5>Pala Truper</h5>
+            <h6>$10.000</h6>
+            <!-- Boton Ver Producto -->
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Ver Producto
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="producto">
+                      <img class="izquierda" src="imagenes/destacado1.jpg">
+
+                      <h5>Pala Hoper</h5>
+                      <aside>
+                        <table>
+                          <tr>
+                            <td>Nombre</td>
+                            <td>Pala Hoper</td>
+                          </tr>
+                          <tr>
+                            <td>Marca</td>
+                            <td>Hoper </td>
+                          </tr>
+                          <tr>
+                            <td>Precio</td>
+                            <td>$10.000 </td>
+                          </tr>
+                        </table>
+                      </aside>
+
+                    </div>
+                    <div class="producto_desc">
+                      <b>Descripción:</b>
+                      Pala con con forma de punta y mango de madera que le permitirá excavar de una forma más cómoda y
+                      realizar todo tipo de trabajos profesionales.
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class=" col-xs col-sm-6 col-md col-lg-4">
+          <div>
+            <img src="imagenes/destacado2.jpg" class="img-fluid">
+            <h5>Macetero</h5>
+            <h6>$3.000</h6>
+          </div>
+          <!-- Boton Ver Producto -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModa2">
+            Ver Producto
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="producto">
+                    <img class="izquierda" src="imagenes/destacado2.jpg">
+
+                    <h5>Macetero</h5>
+                    <aside>
+                      <table>
+                        <tr>
+                          <td>Nombre</td>
+                          <td>Macetero</td>
+                        </tr>
+                        <tr>
+                          <td>Marca</td>
+                          <td>Generico </td>
+                        </tr>
+                        <tr>
+                          <td>Precio</td>
+                          <td>$3.000 </td>
+                        </tr>
+                      </table>
+                    </aside>
+
+                  </div>
+                  <div class="producto_desc">
+                    <b>Descripción:</b>
+                    Macetero perfecto para plantas.
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class=" col-xs col-sm-6 col-md col-lg-4">
+          <div>
+            <img src="imagenes/destacado3.jpg" class="img-fluid">
+            <h5>Tijera De Podar </h5>
+            <h6>$10.000</h6>
+          </div>
+          <!-- Boton Ver Producto -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModa3">
+            Ver Producto
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModa3" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="producto">
+                    <img class="izquierda" src="imagenes/destacado3.jpg">
+
+                    <h5>Tijera de Podar</h5>
+                    <aside>
+                      <table>
+                        <tr>
+                          <td>Nombre</td>
+                          <td>Tijera de Podar</td>
+                        </tr>
+                        <tr>
+                          <td>Marca</td>
+                          <td>Hoper </td>
+                        </tr>
+                        <tr>
+                          <td>Precio</td>
+                          <td>$8.000 </td>
+                        </tr>
+                      </table>
+                    </aside>
+
+                  </div>
+                  <div class="producto_desc">
+                    <b>Descripción:</b>
+                    La Tijera de podar hoper de estilo profesional es ideal para cortar tallos y ramas ligeras.
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <h5 class="Ofertas">Nuestras Ofertas </h5>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs col-sm-6 col-md col-lg-4">
+          <div>
+
+            <img src="imagenes/oferta1.jpg" class="img-fluid">
+            <h5>Set Herramientas Jardin 4 Piezas </h5>
+            <h6>$20.000</h6>
+            <!-- Boton Ver Producto -->
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModa4">
+              Ver Producto
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModa4" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="producto">
+                      <img class="izquierda" src="imagenes/oferta1.jpg">
+
+                      <h5>Set Herramientas Jardin 4 Piezas</h5>
+                      <aside>
+                        <table>
+                          <tr>
+                            <td>Nombre</td>
+                            <td>Set Herramientas Jardin 4 Piezas</td>
+                          </tr>
+                          <tr>
+                            <td>Marca</td>
+                            <td>Troper </td>
+                          </tr>
+                          <tr>
+                            <td>Precio</td>
+                            <td>$20.000 </td>
+                          </tr>
+                        </table>
+                      </aside>
+
+                    </div>
+                    <div class="producto_desc">
+                      <b>Descripción:</b>
+                      Set Herramientas Jardin 4 Piezas profesionales.
+                    </div>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class=" col-xs col-sm-6 col-md col-lg-4">
+          <div>
+            <img src="imagenes/oferta2.jpg" class="img-fluid">
+            <h5>Kit de Herramientas de Bonsai</h5>
+            <h6>$3.000</h6>
+          </div>
+          <!-- Boton Ver Producto -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModa5">
+            Ver Producto
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModa5" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="producto">
+                    <img class="izquierda" src="imagenes/oferta2.jpg">
+
+                    <h5>Kit de Herramientas de Bonsai</h5>
+                    <aside>
+                      <table>
+                        <tr>
+                          <td>Nombre</td>
+                          <td>Kit de Herramientas de Bonsaii</td>
+                        </tr>
+                        <tr>
+                          <td>Marca</td>
+                          <td>Generico </td>
+                        </tr>
+                        <tr>
+                          <td>Precio</td>
+                          <td>$15.000 </td>
+                        </tr>
+                      </table>
+                    </aside>
+
+                  </div>
+                  <div class="producto_desc">
+                    <b>Descripción:</b>
+                    Kit de Herramientas de Bonsai.
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class=" col-xs col-sm-6 col-md col-lg-4">
+          <div>
+            <img src="imagenes/oferta3.jpg" class="img-fluid">
+            <h5>Tierra De Hoja Saco De 40 Litros </h5>
+            <h6>$8.000</h6>
+          </div>
+          <!-- Boton Ver Producto -->
+          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModa6">
+            Ver Producto
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModa6" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="producto">
+                    <img class="izquierda" src="imagenes/oferta3.jpg">
+
+                    <h5>Tierra De Hoja Saco De 40 Litros</h5>
+                    <aside>
+                      <table>
+                        <tr>
+                          <td>Nombre</td>
+                          <td>Tierra De Hoja Saco De 40 Litros</td>
+                        </tr>
+                        <tr>
+                          <td>Marca</td>
+                          <td>Hoper </td>
+                        </tr>
+                        <tr>
+                          <td>Precio</td>
+                          <td>$8.000 </td>
+                        </tr>
+                      </table>
+                    </aside>
+
+                  </div>
+                  <div class="producto_desc">
+                    <b>Descripción:</b>
+                    Tierra de Hoja.
+                  </div>
+                </div>
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Agregar al Carrito</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+<marquee direction="left">    <div class="container mt-4 p-3 mb-5 bg-body rounded" >
+  <table class="table table-bordered table-striped" style="background-color: #054d3b;" style="color: #fff;">
+  
+    <tbody id="data" style="color: #fff;">
+    </tbody>
+  </table>
+</div></marquee>
+
+    <script>
+      let url = 'https://jardineria-36bb4-default-rtdb.firebaseio.com/donadores.json';
+        fetch(url)
+            .then( response => response.json() )
+            .then( data => mostrarData(data) )
+            .catch( error => console.log(error) )
+
+        const mostrarData = (data) => {
+            console.log(data)
+            let body = ""
+            body+=` Ultimas Donaciones: `
+            for (var i = 0; i < data.length; i++) {      
+               body+=` ${data[i].nombre} ${data[i].monto} | `
+            }
+            document.getElementById('data').innerHTML = body
+            //console.log(body)
+        }
+    </script>
+
+</div>
+</body>
+
+
+
+<footer class="text-center footer-style">
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+        <h3>Información</h3>
+        <ul class="list-inline">
+          <li>
+            <a target="_blank" href="QuienesSomos.html">Quienes Somos</a>
+          </li>
+          <li>
+            <a target="_blank" href="mailto:ventajardin@gmail.com">Contacto</a>
+          </li>
+          <li>
+            <a target="_blank" href="#">Suscribete</a>
+          </li>
+          <li>
+          </li>
+          <li>
+            <a target="_blank" href="registro.html">Registro</a>
+          </li>
+          <li>
+            <a target="_blank" href="listadonadores.html">Donadores Destacados</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Redes Sociales</h3>
+        <ul class="list-inline">
+          <li>
+            <img src="imagenes/facebook.png" class="img-fluid">
+            <a target="_blank" href="#">Facebook</a>
+          </li>
+          <li>
+            <img src="imagenes/twitter.png" class="img-fluid">
+            <a target="_blank" href="#">Twitter</a>
+          </li>
+          <li>
+            <img src="imagenes/instagram.png" class="img-fluid">
+            <a target="_blank" href="#">Instragram</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Contactanos</h3>
+        <p><img src="imagenes/telephone.png" class="img-fluid"> (+56) 9 99570080</p>
+        <p><img src="imagenes/telephone.png" class="img-fluid"> (+56) 2 477472</p>
+      </div>
+</footer>
+
+</html>

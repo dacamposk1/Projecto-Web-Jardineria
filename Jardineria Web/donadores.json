@@ -1,0 +1,46 @@
+{
+  "donadores": [
+    {
+      "id": 1,
+      "nombre": "Victor Piedra",
+      "email": "v.piedra@gmail.com",
+      "monto": "$20.000"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan Pueller",
+      "email": "j.pueller@gmail.com",
+      "monto": "$10.000"
+    },
+    {
+      "id": 3,
+      "nombre": "Diego Osorio",
+      "email": "d.osorio@gmail.com",
+      "monto": "$10.000"
+    },
+    {
+      "id": 4,
+      "nombre": "Sofía Flores",
+      "email": "s.flores@gmail.com",
+      "monto": "$30.000"
+    },
+    {
+      "id": 5,
+      "nombre": "Fernanda Contreras",
+      "email": "f.contreras@gmail.com",
+      "monto": "$20.000"
+    },
+    {
+      "id": 6,
+      "nombre": "Javiera Salas",
+      "email": "j.salas@gmail.com",
+      "monto": "$10.000"
+    },
+    {
+      "id": 7,
+      "nombre": "Diego Ovalle",
+      "email": "d.lopez@gmail.com",
+      "monto": "$5.000"
+    }
+  ]
+}
