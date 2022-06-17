@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{% static 'JardinWeb/css/css.css' %}">
+
+
+
+  <title>Listado de  Productos</title>
+
+</head>
+
+<header>
+
+
+
+  <div class="container-fluid" style="padding:10px;">
+    <div class="row">
+      <div class="col-xs col-sm-6 col-md col-lg-4">
+        <div class="logo"><img src="{% static 'JardinWeb/img/header.png' %}" class="img-fluid"></div>
+      </div>
+      <div class="col-xs col-sm-6 col-md col-lg-6">
+        <div class="busqueda">
+          <nav class="navbar navbar-light" style="background-color: #fdfff9;">
+            <div class="container-fluid">
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+       <div class="col-xs col-sm-12 col-md col-lg-2" >
+
+        {% if user.is_authenticated %}
+        <a href="{%url 'logout' %}" class="btn btn-outline-success" role="button" aria-pressed="true">Cerrar Sesion</a>
+        Bienvenido/a: <a href="#" >{{user.username}}</a>
+        <a href="{%url 'panel' %}" >Panel de Control</a>
+
+        {% else %}
+        <a href="{%url 'login' %}" class="btn btn-outline-success" role="button" aria-pressed="true">Iniciar Sesión</a>
+
+
+      {% endif %}
+
+    </div>
+
+
+</header>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #054d3b;" style="color: #ffffff;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'home' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'quienessomos' %}">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Revisa Nuestros Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #054d3b;">
+            <li><a class="dropdown-item" href="{%url 'herramientas' %}">Herramientas de Jardineria</a></li>
+            <li><a class="dropdown-item" href="{%url 'plantas' %}">Plantas</a></li>
+            <li><a class="dropdown-item" href="#">Riego</a></li>
+            <li><a class="dropdown-item" href="#">Tierra</a></li>
+          </ul>
+        </li>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:ventajardin@gmail.com">Contacto</a>
+        </li>
+
+    </div>
+  </div>
+</nav>
+
+<div class="principal">
+
+
+
+{% block js %}
+
+<script>
+    function eliminarProducto(idProducto) {
+        Swal.fire({
+              "title": "¿Estas seguro de eliminar el producto?",
+              "text": "Esta acción no se puede deshacer ",
+              "icon":"question",
+              "showCancelButton":true,
+              "cancelButtonText": "No, cancelar",
+              "confirmButtonText": "Si, Eliminar",
+              "reverseButtons": true
+        })
+
+  }
+</script>
+{% endblock %}
+
+  <body>
+
+    <div class="container-fluid">
+          {% load humanize%}
+        <div class="row mb-4">
+            <h1>Listado de Productos</h1>
+        </div>
+        <div class="row">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped " >
+                <thead>
+                    <tr style="text-align:center;">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre </th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Opciones</th>
+
+                    
+                    </tr>
+                </thead>
+                {% for p in productos %}
+                <tr>
+                    <td>{{p.idProducto}}</td>
+                    <td class="text-truncate">{{p.nombreProducto}}</td>
+                    <td>{% if p.categoria_id == 1 %}
+                    Herramientas
+                    {% else %}
+                    Plantas 
+                    {% endif %}</td>
+                    <td>{{p.marca}}</td>
+                    <td>${{p.precio | intcomma}}</td>
+                    <td>
+                    <a href="{%url 'modificar' p.idProducto %}" class="btn btn-info btn-sm" >Modificar</a> 
+                    <a href="{%url 'eliminar_producto' p.idProducto %}" class="btn btn-danger btn-sm">Eliminar</a>
+                  </td>
+                   
+
+
+                </tr>
+                
+                {% endfor %}
+               
+            </table>
+           {% include 'JardinWeb/paginator.html' %}
+
+        </div>
+         <a href="{%url 'panel' %}" class="btn btn-success" role="button" aria-pressed="true">Atras</a>
+
+    </div>
+</div>
+  </body>
+
+</div>
+
+<footer class="text-center footer-style">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+        <h3>Información</h3>
+        <ul class="list-inline">
+          <li>
+            <a target="_blank" href="QuienesSomos.html">Quienes Somos</a>
+          </li>
+          <li>
+            <a target="_blank" href="mailto:ventajardin@gmail.com">Contacto</a>
+          </li>
+          <li>
+            <a target="_blank" href="#">Suscribete</a>
+          </li>
+          <li>
+          </li>
+          <li>
+            <a target="_blank" href="registro.html">Registro</a>
+          </li>
+          <li>
+            <a target="_blank" href="listadonadores.html">Donadores Destacados</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Redes Sociales</h3>
+        <ul class="list-inline">
+          <li>
+            <img src="{% static 'JardinWeb/img/facebook.png' %}" class="img-fluid">
+            <a target="_blank" href="#">Facebook</a>
+          </li>
+          <li>
+            <img src="{% static 'JardinWeb/img/twitter.png' %}" class="img-fluid">
+            <a target="_blank" href="#">Twitter</a>
+          </li>
+          <li>
+            <img src="{% static 'JardinWeb/img/instagram.png' %}" class="img-fluid">
+            <a target="_blank" href="#">Instragram</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Contactanos</h3>
+        <p><img src="{% static 'JardinWeb/img/telephone.png' %}" class="img-fluid"> (+56) 9 99570080</p>
+        <p><img src="{% static 'JardinWeb/img/telephone.png' %}" class="img-fluid"> (+56) 2 477472</p>
+      </div>
+</footer>
+
+</html>

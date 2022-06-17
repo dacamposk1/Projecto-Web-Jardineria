@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'JardinWeb/css/css.css' %}">
+
+    <title>Registro Venta Jardineria</title>
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#error").hide();
+
+
+      $("#formulario").submit(function () {
+        var mensaje = "";
+        if ($("#nombre").val().trim().length == 0) {
+          mensaje = mensaje + "El nombre no puede estar en blanco!! <br>";
+          $("#error").html("El nombre no puede estar en blanco!! ")
+          $("#error").show();
+
+        }
+
+        if ($("#apellido").val().trim().length == 0) {
+          mensaje = mensaje + "El apellido no puede estar en blanco!! <br> ";
+          $("#error").html("El apellido no puede estar en blanco!! ")
+          $("#error").show();
+
+        }
+        if ($("#email").val().trim().length == 0) {
+          mensaje = mensaje + "El email no puede estar en blanco!! <br>";
+        }
+
+        if ($("#direccion").val().trim().length == 0) {
+          mensaje = mensaje + "La dirrecion no puede estar en blanco!! <br>";
+        }
+
+        if ($("#pass1").val().trim().length == 0) {
+          mensaje = mensaje + "La contraseña no puede estar en blanco!! <br>";
+        }
+
+        if ($("#codigopostal").val().trim().length == 0) {
+          mensaje = mensaje + "El codigo postal no puede estar en blanco!! <br>";
+        }
+
+        if ($("#donador").val() == 0) {
+          mensaje = mensaje + "Selecione si quiere ser donante <br>";
+        }
+
+        if (mensaje != "") {
+          $("#error").html(mensaje);
+          $("#error").show();
+          event.preventDefault();
+        }
+      });
+
+    });
+
+  </script>
+</head>
+
+<header>
+  <div class="container-fluid" style="padding:10px;">
+    <div class="row">
+      <div class="col-xs col-sm-6 col-md col-lg-4">
+        <div class="logo"><img src="{% static 'JardinWeb/img/header.png' %}" class="img-fluid"></div>
+      </div>
+
+      </script>
+</header>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #054d3b;" style="color: #ffffff;">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'home' %}">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{%url 'quienessomos' %}">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Revisa Nuestros Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #054d3b;">
+            <li><a class="dropdown-item" href="{%url 'herramientas' %}">Herramientas de Jardineria</a></li>
+            <li><a class="dropdown-item" href="{%url 'plantas' %}">Plantas</a></li>
+            <li><a class="dropdown-item" href="#">Riego</a></li>
+            <li><a class="dropdown-item" href="#">Tierra</a></li>
+          </ul>
+        </li>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:ventajardin@gmail.com">Contacto</a>
+        </li>
+
+    </div>
+  </div>
+</nav>
+
+<div class="principal">
+
+  <body>
+
+
+    <div>
+      <form id="formulario" action="pagina2.html" enctype="multipart/form-data" method="GET"
+        class="row g-3 needs-validation">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
+        </div>
+        <div class="col-md-6">
+          <label for="input" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido">
+        </div>
+    </div>
+    <div>
+      <div class="col-md-12">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="pass1" name="pass1">
+        </div>
+
+        <div class="col-md-12">
+          <label for="inputAddress" class="form-label">Dirreción</label>
+          <input type="text" class="form-control" id="direccion">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="inputZip" class="form-label">Codigo Postal</label>
+          <input type="text" class="form-control" id="codigopostal">
+        </div>
+
+        <div class="col-md-6">
+          <label for="inputZip" class="form-label">Desea Ser Donante</label>
+
+          <select class="form-select" aria-label="Donador" id="donador">
+            <option value="0">Seleccione...</option>
+            <option value="1">Si</option>
+            <option value="2">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Deseo recibir correos con oferta y notificaciones de la tienda.
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <div id="error" class="alert alert-danger" role="alert">0</div>
+        <button type="submit" class="btn btn-outline-success">Crear Cuenta</button>
+
+
+      </div>
+      </form>
+    </div>
+  </body>
+
+
+</div>
+
+<footer class="text-center footer-style">
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+        <h3>Información</h3>
+        <ul class="list-inline">
+          <li>
+            <a  href="QuienesSomos.html">Quienes Somos</a>
+          </li>
+          <li>
+            <a href="mailto:ventajardin@gmail.com">Contacto</a>
+          </li>
+          <li>
+            <a  href="#">Suscribete</a>
+          </li>
+          <li>
+          </li>
+          <li>
+            <a href="registro.html">Registro</a>
+          </li>
+          <li>
+            <a target="_blank" href="listadonadores.html">Donadores Destacados</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Redes Sociales</h3>
+        <ul class="list-inline">
+            <li>
+                <img src="{% static 'JardinWeb/img/facebook.png' %}" class="img-fluid">
+                <a target="_blank" href="#">Facebook</a>
+            </li>
+            <li>
+                <img src="{% static 'JardinWeb/img/twitter.png' %}" class="img-fluid">
+                <a target="_blank" href="#">Twitter</a>
+            </li>
+            <li>
+                <img src="{% static 'JardinWeb/img/instagram.png' %}" class="img-fluid">
+                <a target="_blank" href="#">Instragram</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h3>Contactanos</h3>
+        <p><img src="{% static 'JardinWeb/img/telephone.png' %}" class="img-fluid"> (+56) 9 99570080</p>
+        <p><img src="{% static 'JardinWeb/img/telephone.png' %}"class="img-fluid"> (+56) 2 477472</p>
+    </div>
+</footer>
+
+
+
+</html>
