@@ -25,8 +25,6 @@
 
 <header>
 
-
-
   <div class="container-fluid" style="padding:10px;">
     <div class="row">
       <div class="col-xs col-sm-6 col-md col-lg-4">
@@ -50,7 +48,7 @@
         {% if user.is_authenticated %}
         <a href="{%url 'logout' %}" class="btn btn-outline-success" role="button" aria-pressed="true">Cerrar Sesion</a>
         Bienvenido/a: <a href="#" >{{user.username}}</a>
-        <a href="{%url 'panel' %}" >Panel de Control</a>
+        <a href="{%url 'panel' %}" >Panel de Admin</a>
 
         {% else %}
         <a href="{%url 'login' %}" class="btn btn-outline-success" role="button" aria-pressed="true">Iniciar Sesión</a>
@@ -169,9 +167,11 @@
            {% include 'JardinWeb/paginator.html' %}
 
         </div>
-         <a href="{%url 'panel' %}" class="btn btn-success" role="button" aria-pressed="true">Atras</a>
+          <div> <a href="{%url 'panel' %}" style="float:right;" class="btn btn-success" role="button" aria-pressed="true">Atras</a></div>
 
     </div>
+
+  
 </div>
   </body>
 

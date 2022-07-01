@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'colorfield',
     'django.contrib.humanize',
     'crispy_forms',
+    'rest_framework',
+    'django_bootstrap_icons',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -65,7 +67,7 @@ ROOT_URLCONF = 'JardineriaWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'JardinWeb.context_processor.total_carrito',
             ],
         },
     },

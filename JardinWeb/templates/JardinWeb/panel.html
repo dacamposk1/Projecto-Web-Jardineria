@@ -42,7 +42,7 @@
       {% if user.is_authenticated %}
       <a href="{%url 'logout' %}" class="btn btn-outline-success" role="button" aria-pressed="true">Cerrar Sesion</a>
       Bienvenido/a: <a href="#" >{{user.username}}</a>
-      <a href="{%url 'panel' %}" >Panel de Control</a>
+      <a href="{%url 'panel' %}" >Panel de Admin</a>
 
 
 
@@ -108,9 +108,11 @@
           
         <a href="{%url 'listar' %}" class="btn btn-success" role="button" aria-pressed="true">Administrar Productos</a>
 
-        <hr>
+        <br>
+        <br>
         <a href="{%url 'agregar' %}" class="btn btn-success" role="button" aria-pressed="true">Agregar Producto</a>
- <hr>
+ <br>
+ <br>
  <button type="button" class="btn btn-success">Salir</button>
 
  </div>
